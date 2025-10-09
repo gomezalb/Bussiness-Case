@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Bussiness Case"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "bd82e30b-d21b-4bc4-a7af-bd33d0823a4e"
+  }
+}

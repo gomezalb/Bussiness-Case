@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Bussiness Case"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "154180bc-8344-44ec-ad53-f1a50a387e70"
+  }
+}

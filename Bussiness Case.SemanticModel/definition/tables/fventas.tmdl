@@ -1,0 +1,78 @@
+table fventas
+	lineageTag: 523453f4-25d4-4deb-8109-63d15d3c1b5a
+
+	column id_compra
+		dataType: string
+		lineageTag: 83ee06b5-4c37-4573-b7f0-57eb9fe22358
+		summarizeBy: none
+		sourceColumn: id_compra
+
+		annotation SummarizationSetBy = Automatic
+
+	column id_producto
+		dataType: string
+		lineageTag: ebdc7410-3ea3-491f-a326-edfd9165d8d4
+		summarizeBy: none
+		sourceColumn: id_producto
+
+		annotation SummarizationSetBy = Automatic
+
+	column id_local
+		dataType: string
+		lineageTag: 011a5406-02fb-4061-b097-586f1757e07e
+		summarizeBy: none
+		sourceColumn: id_local
+
+		annotation SummarizationSetBy = Automatic
+
+	column id_vendedor
+		dataType: string
+		lineageTag: 56c8c5d1-33f4-4555-9837-b7a005937f8f
+		summarizeBy: none
+		sourceColumn: id_vendedor
+
+		annotation SummarizationSetBy = Automatic
+
+	column id_cliente
+		dataType: string
+		lineageTag: 50669575-a6c3-411e-820f-2af6fa7d96d7
+		summarizeBy: none
+		sourceColumn: id_cliente
+
+		annotation SummarizationSetBy = Automatic
+
+	column fecha_compra
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 236c0af7-3a77-474c-a7a1-dc78a482dfe8
+		summarizeBy: none
+		sourceColumn: fecha_compra
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column qtde
+		dataType: int64
+		formatString: 0
+		lineageTag: bf450636-1d96-46c4-b6fd-a57a7d85a376
+		summarizeBy: sum
+		sourceColumn: qtde
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fventas = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents("C:\Users\alber\Documents\Cursos Analisis de datos\Empowerdata\Dominando DAX - nivel 5\BC_DOMINANDO_DAX\BC_DOMINANDO_DAX.xlsx"), null, true),
+				    fventas_Sheet = Origen{[Item="fventas",Kind="Sheet"]}[Data],
+				    #"Encabezados promovidos" = Table.PromoteHeaders(fventas_Sheet, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"id_compra", type text}, {"id_producto", type text}, {"id_local", type text}, {"id_vendedor", type text}, {"id_cliente", type text}, {"fecha_compra", type date}, {"qtde", Int64.Type}})
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,43 @@
+table dVendedor
+	lineageTag: 91cb09cc-9dfd-433e-9dee-5e9c466d07c4
+
+	column id_vendedor
+		dataType: string
+		lineageTag: e6decdb3-d59e-4d10-91a9-627e18ae61c2
+		summarizeBy: none
+		sourceColumn: id_vendedor
+
+		annotation SummarizationSetBy = Automatic
+
+	column nombre_vendedor
+		dataType: string
+		lineageTag: 3a6d6988-2287-4318-8f01-451b69610031
+		summarizeBy: none
+		sourceColumn: nombre_vendedor
+
+		annotation SummarizationSetBy = Automatic
+
+	column img_vendedor
+		dataType: string
+		lineageTag: e85f49a3-f7e6-41fd-b386-a621dbbea79c
+		summarizeBy: none
+		sourceColumn: img_vendedor
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dVendedor = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents("C:\Users\alber\Documents\Cursos Analisis de datos\Empowerdata\Dominando DAX - nivel 5\BC_DOMINANDO_DAX\BC_DOMINANDO_DAX.xlsx"), null, true),
+				    dVendedor_Sheet = Origen{[Item="dVendedor",Kind="Sheet"]}[Data],
+				    #"Encabezados promovidos" = Table.PromoteHeaders(dVendedor_Sheet, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"id_vendedor", type text}, {"nombre_vendedor", type text}, {"img_vendedor", type text}, {"Column4", type any}}),
+				    #"Columnas quitadas" = Table.RemoveColumns(#"Tipo cambiado",{"Column4"})
+				in
+				    #"Columnas quitadas"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

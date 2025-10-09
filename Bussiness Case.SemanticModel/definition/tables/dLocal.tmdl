@@ -1,0 +1,104 @@
+table dLocal
+	lineageTag: 49a770c8-682a-45a8-9b49-6a4e367a3c94
+
+	column id_local
+		dataType: string
+		lineageTag: a1427dfa-a339-477a-bbd2-5a09c652b262
+		summarizeBy: none
+		sourceColumn: id_local
+
+		annotation SummarizationSetBy = Automatic
+
+	column nombre
+		dataType: string
+		lineageTag: e6a833e1-abf6-466c-94fe-610cd6848fc4
+		summarizeBy: none
+		sourceColumn: nombre
+
+		annotation SummarizationSetBy = Automatic
+
+	column ciudad
+		dataType: string
+		lineageTag: 856805e9-8951-45d5-a7aa-75d46a1eeb43
+		summarizeBy: none
+		sourceColumn: ciudad
+
+		annotation SummarizationSetBy = Automatic
+
+	column estado_sigla
+		dataType: string
+		lineageTag: c2d6f234-0cf8-4209-8da7-a96671e9e5bf
+		summarizeBy: none
+		sourceColumn: estado_sigla
+
+		annotation SummarizationSetBy = Automatic
+
+	column estado_desc
+		dataType: string
+		lineageTag: 42b6c990-22f4-425e-9f66-e3abd42595d2
+		summarizeBy: none
+		sourceColumn: estado_desc
+
+		annotation SummarizationSetBy = Automatic
+
+	column tipo
+		dataType: string
+		lineageTag: 2a6a42c4-466d-475f-aa95-6bac54a81537
+		summarizeBy: none
+		sourceColumn: tipo
+
+		annotation SummarizationSetBy = Automatic
+
+	column Latitud
+		dataType: double
+		lineageTag: 26adf268-c959-451f-9200-d69104aa818f
+		summarizeBy: none
+		sourceColumn: Latitud
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Longitud
+		dataType: double
+		lineageTag: 1d54e900-2d0c-40fa-aa4c-0d84c801e5ba
+		summarizeBy: none
+		sourceColumn: Longitud
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column población
+		dataType: int64
+		formatString: 0
+		lineageTag: 1849b53a-f0ba-40da-b7c2-41ff9f366313
+		summarizeBy: none
+		sourceColumn: población
+
+		annotation SummarizationSetBy = Automatic
+
+	column renta_anual_media
+		dataType: int64
+		formatString: 0
+		lineageTag: d8293293-938e-4d0a-94ae-171e9ac9d3fd
+		summarizeBy: none
+		sourceColumn: renta_anual_media
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dLocal = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents("C:\Users\alber\Documents\Cursos Analisis de datos\Empowerdata\Dominando DAX - nivel 5\BC_DOMINANDO_DAX\BC_DOMINANDO_DAX.xlsx"), null, true),
+				    dLocal_Sheet = Origen{[Item="dLocal",Kind="Sheet"]}[Data],
+				    #"Encabezados promovidos" = Table.PromoteHeaders(dLocal_Sheet, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"id_local", type text}, {"nombre", type text}, {"ciudad", type text}, {"estado_sigla", type text}, {"estado_desc", type text}, {"tipo", type text}, {"Latitud", type number}, {"Longitud", type number}, {"población", Int64.Type}, {"renta_anual_media", Int64.Type}})
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,16 @@
+relationship AutoDetected_31bfa39d-1d4d-4a32-90d3-32817a3b9993
+	fromColumn: fventas.id_cliente
+	toColumn: dClientes.id_cliente
+
+relationship AutoDetected_ee9bf44c-6f70-4b9d-aaf3-5faaa5a53693
+	fromColumn: fventas.id_local
+	toColumn: dLocal.id_local
+
+relationship AutoDetected_d6febf2b-1c85-4ad0-b256-fd0508bfc713
+	fromColumn: fventas.id_producto
+	toColumn: dproducto.id_producto
+
+relationship AutoDetected_41d95056-3f9d-496f-b033-e0f296c2e41a
+	fromColumn: fventas.id_vendedor
+	toColumn: dVendedor.id_vendedor
+
