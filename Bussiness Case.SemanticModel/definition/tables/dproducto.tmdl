@@ -18,7 +18,7 @@ table dproducto
 		annotation SummarizationSetBy = Automatic
 
 	column costo_producto
-		dataType: int64
+		dataType: decimal
 		formatString: 0
 		lineageTag: 7c8d3272-22a3-48b8-9a0a-78decfd613c9
 		summarizeBy: none
@@ -27,7 +27,7 @@ table dproducto
 		annotation SummarizationSetBy = Automatic
 
 	column precio_venta
-		dataType: int64
+		dataType: decimal
 		formatString: 0
 		lineageTag: 36ae4d2f-63ca-4a8f-b1aa-b079df10c7e2
 		summarizeBy: none
@@ -36,7 +36,7 @@ table dproducto
 		annotation SummarizationSetBy = Automatic
 
 	column impuesto
-		dataType: double
+		dataType: decimal
 		lineageTag: 82848f8b-a6bf-4797-af43-93f3b4952239
 		summarizeBy: none
 		sourceColumn: impuesto
@@ -49,10 +49,10 @@ table dproducto
 		mode: import
 		source =
 				let
-				    Origen = Excel.Workbook(File.Contents("C:\Users\alber\Documents\Cursos Analisis de datos\Empowerdata\Dominando DAX - nivel 5\BC_DOMINANDO_DAX\BC_DOMINANDO_DAX.xlsx"), null, true),
+				    Origen = Excel.Workbook(File.Contents("C:\Users\alber\Documents\Cursos Analisis de datos\Empowerdata\Dominando DAX - nivel 5\BC_DOMINANDO_DAX\Bussiness Case\Database.xlsx"), null, true),
 				    dproducto_Sheet = Origen{[Item="dproducto",Kind="Sheet"]}[Data],
 				    #"Encabezados promovidos" = Table.PromoteHeaders(dproducto_Sheet, [PromoteAllScalars=true]),
-				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"id_producto", type text}, {"descripción", type text}, {"costo_producto", Int64.Type}, {"precio_venta", Int64.Type}, {"impuesto", type number}})
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"id_producto", type text}, {"descripción", type text}, {"costo_producto", Currency.Type}, {"precio_venta", Currency.Type}, {"impuesto", Currency.Type}})
 				in
 				    #"Tipo cambiado"
 

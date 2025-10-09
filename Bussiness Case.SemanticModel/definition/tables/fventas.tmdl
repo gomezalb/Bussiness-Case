@@ -65,7 +65,7 @@ table fventas
 		mode: import
 		source =
 				let
-				    Origen = Excel.Workbook(File.Contents("C:\Users\alber\Documents\Cursos Analisis de datos\Empowerdata\Dominando DAX - nivel 5\BC_DOMINANDO_DAX\BC_DOMINANDO_DAX.xlsx"), null, true),
+				    Origen = Excel.Workbook(File.Contents("C:\Users\alber\Documents\Cursos Analisis de datos\Empowerdata\Dominando DAX - nivel 5\BC_DOMINANDO_DAX\Bussiness Case\Database.xlsx"), null, true),
 				    fventas_Sheet = Origen{[Item="fventas",Kind="Sheet"]}[Data],
 				    #"Encabezados promovidos" = Table.PromoteHeaders(fventas_Sheet, [PromoteAllScalars=true]),
 				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"id_compra", type text}, {"id_producto", type text}, {"id_local", type text}, {"id_vendedor", type text}, {"id_cliente", type text}, {"fecha_compra", type date}, {"qtde", Int64.Type}})

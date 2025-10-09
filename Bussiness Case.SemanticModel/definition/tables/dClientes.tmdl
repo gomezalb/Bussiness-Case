@@ -21,7 +21,7 @@ table dClientes
 		mode: import
 		source =
 				let
-				    Origen = Excel.Workbook(File.Contents("C:\Users\alber\Documents\Cursos Analisis de datos\Empowerdata\Dominando DAX - nivel 5\BC_DOMINANDO_DAX\BC_DOMINANDO_DAX.xlsx"), null, true),
+				    Origen = Excel.Workbook(File.Contents("C:\Users\alber\Documents\Cursos Analisis de datos\Empowerdata\Dominando DAX - nivel 5\BC_DOMINANDO_DAX\Bussiness Case\Database.xlsx"), null, true),
 				    dClientes_Sheet = Origen{[Item="dClientes",Kind="Sheet"]}[Data],
 				    #"Tipo cambiado" = Table.TransformColumnTypes(dClientes_Sheet,{{"Column1", type text}, {"Column2", type text}}),
 				    #"Encabezados promovidos" = Table.PromoteHeaders(#"Tipo cambiado", [PromoteAllScalars=true]),

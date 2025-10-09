@@ -29,7 +29,7 @@ table dVendedor
 		mode: import
 		source =
 				let
-				    Origen = Excel.Workbook(File.Contents("C:\Users\alber\Documents\Cursos Analisis de datos\Empowerdata\Dominando DAX - nivel 5\BC_DOMINANDO_DAX\BC_DOMINANDO_DAX.xlsx"), null, true),
+				    Origen = Excel.Workbook(File.Contents("C:\Users\alber\Documents\Cursos Analisis de datos\Empowerdata\Dominando DAX - nivel 5\BC_DOMINANDO_DAX\Bussiness Case\Database.xlsx"), null, true),
 				    dVendedor_Sheet = Origen{[Item="dVendedor",Kind="Sheet"]}[Data],
 				    #"Encabezados promovidos" = Table.PromoteHeaders(dVendedor_Sheet, [PromoteAllScalars=true]),
 				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"id_vendedor", type text}, {"nombre_vendedor", type text}, {"img_vendedor", type text}, {"Column4", type any}}),

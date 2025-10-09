@@ -91,7 +91,7 @@ table dLocal
 		mode: import
 		source =
 				let
-				    Origen = Excel.Workbook(File.Contents("C:\Users\alber\Documents\Cursos Analisis de datos\Empowerdata\Dominando DAX - nivel 5\BC_DOMINANDO_DAX\BC_DOMINANDO_DAX.xlsx"), null, true),
+				    Origen = Excel.Workbook(File.Contents("C:\Users\alber\Documents\Cursos Analisis de datos\Empowerdata\Dominando DAX - nivel 5\BC_DOMINANDO_DAX\Bussiness Case\Database.xlsx"), null, true),
 				    dLocal_Sheet = Origen{[Item="dLocal",Kind="Sheet"]}[Data],
 				    #"Encabezados promovidos" = Table.PromoteHeaders(dLocal_Sheet, [PromoteAllScalars=true]),
 				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"id_local", type text}, {"nombre", type text}, {"ciudad", type text}, {"estado_sigla", type text}, {"estado_desc", type text}, {"tipo", type text}, {"Latitud", type number}, {"Longitud", type number}, {"población", Int64.Type}, {"renta_anual_media", Int64.Type}})
