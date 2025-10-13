@@ -17,6 +17,7 @@ ref table dLocal
 ref table dproducto
 ref table dVendedor
 ref table fventas
+ref table dCalendario
 
 ref cultureInfo es-ES
 

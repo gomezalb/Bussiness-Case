@@ -1,0 +1,97 @@
+table dCalendario
+	lineageTag: 68e3d957-4c41-42db-8724-b3b71a1d6782
+
+	column Date
+		formatString: General Date
+		lineageTag: 9244046a-c847-4c4a-9b9b-0deb21c943d0
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		annotation SummarizationSetBy = Automatic
+
+	column mes
+		lineageTag: 697e4bc5-7a18-40ce-ad92-9711d770ea49
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [mes]
+
+		annotation SummarizationSetBy = Automatic
+
+	column mes_num
+		formatString: 0
+		lineageTag: e908e7d4-a15d-4481-9b55-46c7e3455956
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [mes_num]
+
+		annotation SummarizationSetBy = Automatic
+
+	column mes_año
+		lineageTag: 174d160c-eb0c-429b-9562-116e8f06f7d2
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [mes_año]
+
+		annotation SummarizationSetBy = Automatic
+
+	column mesaño_num
+		formatString: 0
+		lineageTag: 9af5e92b-53e0-40bd-b7a8-67a6943c1160
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [mesaño_num]
+
+		annotation SummarizationSetBy = Automatic
+
+	column trim
+		lineageTag: fe1b8768-d61f-44a5-87db-df91ba83c086
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [trim]
+
+		annotation SummarizationSetBy = Automatic
+
+	column dia_semana
+		lineageTag: 3a58dde0-9398-4468-9529-f319e13fcfb4
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [dia_semana]
+
+		annotation SummarizationSetBy = Automatic
+
+	column año
+		formatString: 0
+		lineageTag: f5e980bd-6750-4652-b276-773a4a2aab28
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [año]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dCalendario = calculated
+		mode: import
+		source = ```
+				
+				        var min_date = MIN(fventas[fecha_compra])
+				        var calendario =
+				                        FILTER(
+				                            CALENDARAUTO(),
+				                            YEAR([Date]) >= YEAR(min_date)
+				                        )
+				RETURN
+				    ADDCOLUMNS(
+				        calendario,
+				        "mes", FORMAT([Date], "mmm"),
+				        "mes_num", MONTH([Date]),
+				        "mes_año", FORMAT([Date], "mmm") & " " & YEAR([Date]),
+				        "mesaño_num", MONTH([Date]) + YEAR([Date]) * 1000,
+				        "trim", "Q" & FORMAT([Date], "Q"),
+				        "dia_semana", FORMAT([Date], "ddd"),
+				        "año", YEAR([Date])
+				    )
+				
+				```
+
+	annotation PBI_Id = 09fa0e437ce14f8eac3b7c2dfac91fad
+
