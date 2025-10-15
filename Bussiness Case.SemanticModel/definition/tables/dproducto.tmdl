@@ -19,7 +19,7 @@ table dproducto
 
 	column costo_producto
 		dataType: decimal
-		formatString: 0
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
 		lineageTag: 7c8d3272-22a3-48b8-9a0a-78decfd613c9
 		summarizeBy: none
 		sourceColumn: costo_producto
@@ -28,7 +28,7 @@ table dproducto
 
 	column precio_venta
 		dataType: decimal
-		formatString: 0
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
 		lineageTag: 36ae4d2f-63ca-4a8f-b1aa-b079df10c7e2
 		summarizeBy: none
 		sourceColumn: precio_venta

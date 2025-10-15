@@ -2,7 +2,7 @@ table dCalendario
 	lineageTag: 68e3d957-4c41-42db-8724-b3b71a1d6782
 
 	column Date
-		formatString: General Date
+		formatString: Short Date
 		lineageTag: 9244046a-c847-4c4a-9b9b-0deb21c943d0
 		summarizeBy: none
 		isNameInferred

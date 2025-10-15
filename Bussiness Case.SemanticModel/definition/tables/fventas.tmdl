@@ -43,7 +43,7 @@ table fventas
 
 	column fecha_compra
 		dataType: dateTime
-		formatString: Long Date
+		formatString: Short Date
 		lineageTag: 236c0af7-3a77-474c-a7a1-dc78a482dfe8
 		summarizeBy: none
 		sourceColumn: fecha_compra
