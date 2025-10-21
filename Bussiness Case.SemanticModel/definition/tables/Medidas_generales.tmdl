@@ -1,0 +1,75 @@
+table Medidas_generales
+	lineageTag: 4838098e-ba66-43c2-8dc6-31dfef0660ab
+
+	measure Facturación =
+			
+			SUMX(
+			    fventas, fventas[qtde] * RELATED(dproducto[precio_venta])
+			)
+		formatString: \$\ #,0.0;-\$\ #,0.0;\$\ #,0.0
+		lineageTag: 652d1f4e-fc00-42a2-a6b6-1037a6bee231
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-AR"}
+
+	measure Costo = ```
+			
+			// Consideramos el costo del impuesto en base al total de la facturación de cada venta
+			VAR v_costo_prod = 
+			        SUMX(
+			            fventas,
+			            fventas[qtde] * RELATED(dproducto[costo_producto])
+			        )
+			VAR v_impuesto = 
+			        SUMX(
+			            fventas,
+			            fventas[qtde] * RELATED(dproducto[precio_venta]) * RELATED(dproducto[impuesto])
+			        )
+			RETURN v_costo_prod + v_impuesto
+			```
+		formatString: \$#,0.0;(\$#,0.0);\$#,0.0
+		lineageTag: 31536000-5ab9-45f9-9071-75d5f22a3343
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-US"}
+
+	measure Ganancia = ```
+			[Facturación] - [Costo] 
+			```
+		formatString: \$#,0.0;(\$#,0.0);\$#,0.0
+		lineageTag: 931d05fd-63a5-426d-be73-ecfb29d01ec8
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-US"}
+
+	measure 'Margen Ganancia %' =
+			DIVIDE(
+			                             [Ganancia],
+			                             [Facturación]
+			                    )
+		formatString: 0.0\ %;-0.0\ %;0.0\ %
+		lineageTag: 550050f1-2be0-47c8-bf16-79ed9ff54932
+
+	measure Ctd_pedidos = ```
+			DISTINCTCOUNT(fventas[id_compra]) 
+			```
+		formatString: #,0
+		lineageTag: f4ea0738-9bf8-438d-870b-05bf39a53265
+
+	measure Ctd_vendida = ```
+			SUM(fventas[qtde]) 
+			```
+		formatString: #,0
+		lineageTag: ccfaf9bd-df8e-45be-8517-616384620e82
+
+	partition Medidas_generales = m
+		mode: import
+		source =
+				let
+				    Origen = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Columna1 = _t]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(Origen,{{"Columna1", type text}}),
+				    #"Columnas quitadas" = Table.RemoveColumns(#"Tipo cambiado",{"Columna1"})
+				in
+				    #"Columnas quitadas"
+
+	changedProperty = Name
+
+	annotation PBI_ResultType = Table
+
