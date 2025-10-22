@@ -14,3 +14,7 @@ relationship AutoDetected_41d95056-3f9d-496f-b033-e0f296c2e41a
 	fromColumn: fventas.id_vendedor
 	toColumn: dVendedor.id_vendedor
 
+relationship 2bf93fc6-9dd5-bc33-b717-9197be8402fc
+	fromColumn: fventas.fecha_compra
+	toColumn: dCalendario.Date
+

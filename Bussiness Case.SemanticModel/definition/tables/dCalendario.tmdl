@@ -21,24 +21,28 @@ table dCalendario
 	column mes_num
 		formatString: 0
 		lineageTag: e908e7d4-a15d-4481-9b55-46c7e3455956
-		summarizeBy: sum
+		summarizeBy: none
 		isNameInferred
 		sourceColumn: [mes_num]
 
 		annotation SummarizationSetBy = Automatic
 
 	column mes_año
+		formatString: MMM YY
 		lineageTag: 174d160c-eb0c-429b-9562-116e8f06f7d2
 		summarizeBy: none
 		isNameInferred
 		sourceColumn: [mes_año]
+		sortByColumn: mesaño_num
 
 		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isCustom":true}
 
 	column mesaño_num
 		formatString: 0
 		lineageTag: 9af5e92b-53e0-40bd-b7a8-67a6943c1160
-		summarizeBy: sum
+		summarizeBy: none
 		isNameInferred
 		sourceColumn: [mesaño_num]
 
@@ -63,7 +67,7 @@ table dCalendario
 	column año
 		formatString: 0
 		lineageTag: f5e980bd-6750-4652-b276-773a4a2aab28
-		summarizeBy: sum
+		summarizeBy: none
 		isNameInferred
 		sourceColumn: [año]
 
