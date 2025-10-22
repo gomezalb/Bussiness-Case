@@ -88,7 +88,7 @@ table dCalendario
 				        calendario,
 				        "mes", FORMAT([Date], "mmm"),
 				        "mes_num", MONTH([Date]),
-				        "mes_año", FORMAT([Date], "mmm") & " " & YEAR([Date]),
+				        "mes_año", FORMAT([Date], "mmm") & " " & FORMAT([Date], "yy"),
 				        "mesaño_num", MONTH([Date]) + YEAR([Date]) * 1000,
 				        "trim", "Q" & FORMAT([Date], "Q"),
 				        "dia_semana", FORMAT([Date], "ddd"),

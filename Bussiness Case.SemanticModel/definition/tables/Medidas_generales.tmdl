@@ -59,6 +59,58 @@ table Medidas_generales
 		formatString: #,0
 		lineageTag: ccfaf9bd-df8e-45be-8517-616384620e82
 
+	measure Facturación_LY = ```
+			
+			                CALCULATE(
+			                    [Facturación],
+			                    DATEADD(
+			                        dCalendario[Date],
+			                        -1,
+			                        YEAR
+			                    )
+			                )
+			```
+		formatString: 0
+		lineageTag: 92923ef3-5939-4d82-a436-04a86b67af53
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure Facturación_YTD =
+			
+			VAR V_Max_date = MAX(dCalendario[Date])
+			VAR resultado = CALCULATE(
+			                    [Facturación],
+			                    FILTER(
+			                        ALLSELECTED(dCalendario[Date]),
+			                        dCalendario[Date] <= V_Max_date
+			                    )
+			                )
+			RETURN resultado
+		formatString: \$\ #,0;-\$\ #,0;\$\ #,0
+		lineageTag: f9f7ff16-539b-4ba7-9c48-2cb68b95684e
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-AR"}
+
+	measure Facturación_YTD_LY =
+			
+			VAR V_Max_date = MAX(dCalendario[Date])
+			VAR resultado = CALCULATE(
+			                    [Facturación_LY],
+			                    FILTER(
+			                        ALLSELECTED(dCalendario[Date]),
+			                        dCalendario[Date] <= V_Max_date
+			                    )
+			                )
+			RETURN resultado
+		formatString: \$\ #,0;-\$\ #,0;\$\ #,0
+		lineageTag: 1d09f1c5-49bd-45cc-b4d9-7503c8de106f
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-AR"}
+
+	measure YoY% = DIVIDE([Facturación] - [Facturación_LY], [Facturación_LY])
+		formatString: 0.0\ %;-0.0\ %;0.0\ %
+		lineageTag: 1e2ed157-f2bf-4c17-a947-e26c41d6ed2a
+
 	partition Medidas_generales = m
 		mode: import
 		source =
