@@ -342,6 +342,16 @@ cultureInfo es-ES
 			            "State": "Generated",
 			            "Weight": 0.99
 			          }
+			        },
+			        {
+			          "Sigla Estado": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
@@ -1981,6 +1991,81 @@ cultureInfo es-ES
 			          }
 			        }
 			      ]
+			    },
+			    "medidas_generale.n_clientes": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas_generales",
+			          "ConceptualProperty": "N° Clientes"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "n° clientes": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "medidas_generale.n_clientes_vs_total": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas_generales",
+			          "ConceptualProperty": "N° Clientes vs Total"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "n° clientes vs total": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "n° cliente vs aggregate": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.757
+			          }
+			        },
+			        {
+			          "n° cliente vs overall": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.757
+			          }
+			        }
+			      ]
+			    },
+			    "medidas_generale.media_facturación_cliente": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas_generales",
+			          "ConceptualProperty": "Media_facturación_cliente"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "media facturación cliente": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Media_facturación_cliente": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
 			    }
 			  },
 			  "Relationships": {
@@ -2119,6 +2204,171 @@ cultureInfo es-ES
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "d_clientes_have_fventas"
+			        }
+			      ]
+			    },
+			    "fventa_has_medidas_generale_media_facturación_cliente": {
+			      "Binding": {
+			        "ConceptualEntity": "fventas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fventa": {
+			          "Target": {
+			            "Entity": "fventa"
+			          }
+			        },
+			        "medidas_generale.media_facturación_cliente": {
+			          "Target": {
+			            "Entity": "medidas_generale.media_facturación_cliente"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fventa"
+			            },
+			            "Object": {
+			              "Role": "medidas_generale.media_facturación_cliente"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fventas_have_media_facturación_cliente"
+			        }
+			      ]
+			    },
+			    "dproducto_has_medidas_generale_media_facturación_cliente": {
+			      "Binding": {
+			        "ConceptualEntity": "dproducto"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dproducto": {
+			          "Target": {
+			            "Entity": "dproducto"
+			          }
+			        },
+			        "medidas_generale.media_facturación_cliente": {
+			          "Target": {
+			            "Entity": "medidas_generale.media_facturación_cliente"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dproducto"
+			            },
+			            "Object": {
+			              "Role": "medidas_generale.media_facturación_cliente"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dproductos_have_media_facturación_cliente"
+			        }
+			      ]
+			    },
+			    "d_cliente_has_medidas_generale_media_facturación_cliente": {
+			      "Binding": {
+			        "ConceptualEntity": "dClientes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_cliente": {
+			          "Target": {
+			            "Entity": "d_cliente"
+			          }
+			        },
+			        "medidas_generale.media_facturación_cliente": {
+			          "Target": {
+			            "Entity": "medidas_generale.media_facturación_cliente"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_cliente"
+			            },
+			            "Object": {
+			              "Role": "medidas_generale.media_facturación_cliente"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_clientes_have_media_facturación_cliente"
+			        }
+			      ]
+			    },
+			    "fventa_has_medidas_generale_n_clientes_vs_total": {
+			      "Binding": {
+			        "ConceptualEntity": "fventas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fventa": {
+			          "Target": {
+			            "Entity": "fventa"
+			          }
+			        },
+			        "medidas_generale.n_clientes_vs_total": {
+			          "Target": {
+			            "Entity": "medidas_generale.n_clientes_vs_total"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fventa"
+			            },
+			            "Object": {
+			              "Role": "medidas_generale.n_clientes_vs_total"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fventas_have_n_clientes_vs_total"
+			        }
+			      ]
+			    },
+			    "fventa_has_medidas_generale_n_clientes": {
+			      "Binding": {
+			        "ConceptualEntity": "fventas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fventa": {
+			          "Target": {
+			            "Entity": "fventa"
+			          }
+			        },
+			        "medidas_generale.n_clientes": {
+			          "Target": {
+			            "Entity": "medidas_generale.n_clientes"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fventa"
+			            },
+			            "Object": {
+			              "Role": "medidas_generale.n_clientes"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fventas_have_n_clientes"
 			        }
 			      ]
 			    },
