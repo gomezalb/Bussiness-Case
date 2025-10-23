@@ -111,6 +111,12 @@ table Medidas_generales
 		formatString: 0.0\ %;-0.0\ %;0.0\ %
 		lineageTag: 1e2ed157-f2bf-4c17-a947-e26c41d6ed2a
 
+	measure Dif_Facturación_YTD = [Facturación_YTD] - [Facturación_YTD_LY]
+		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
+		lineageTag: 9635ab9e-3196-4985-bd9c-86e96f94b068
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-AR"}
+
 	partition Medidas_generales = m
 		mode: import
 		source =
