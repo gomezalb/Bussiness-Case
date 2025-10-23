@@ -1341,6 +1341,16 @@ cultureInfo es-ES
 			            },
 			            "Weight": 0.714
 			          }
+			        },
+			        {
+			          "Fecha": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ],
 			      "SemanticType": "Time"
@@ -1882,9 +1892,190 @@ cultureInfo es-ES
 			          }
 			        }
 			      ]
+			    },
+			    "medidas_generale.dif_facturación_YTD": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas_generales",
+			          "ConceptualProperty": "Dif_Facturación_YTD"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "dif facturación YTD": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Dif_Facturación_YTD": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "dif facturación year to date": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.623
+			          }
+			        }
+			      ]
+			    },
+			    "medidas_generale.facturación_MM30": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas_generales",
+			          "ConceptualProperty": "Facturación_MM30"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "facturación MM30": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Facturación_MM30": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "medidas_generale.comentario_MM30": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas_generales",
+			          "ConceptualProperty": "Comentario_MM30"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "comentario MM30": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Comentario_MM30": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "MM30": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
 			    }
 			  },
 			  "Relationships": {
+			    "fventa_has_dproducto": {
+			      "Binding": {
+			        "ConceptualEntity": "fventas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fventa": {
+			          "Target": {
+			            "Entity": "fventa"
+			          }
+			        },
+			        "dproducto": {
+			          "Target": {
+			            "Entity": "dproducto"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fventa"
+			            },
+			            "Object": {
+			              "Role": "dproducto"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fventas_have_dproductos"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dproducto"
+			            },
+			            "Object": {
+			              "Role": "fventa"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dproductos_have_fventas"
+			        }
+			      ]
+			    },
+			    "fventa_has_d_local": {
+			      "Binding": {
+			        "ConceptualEntity": "fventas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fventa": {
+			          "Target": {
+			            "Entity": "fventa"
+			          }
+			        },
+			        "d_local": {
+			          "Target": {
+			            "Entity": "d_local"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fventa"
+			            },
+			            "Object": {
+			              "Role": "d_local"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fventas_have_d_locals"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_local"
+			            },
+			            "Object": {
+			              "Role": "fventa"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_locals_have_fventas"
+			        }
+			      ]
+			    },
 			    "fventa_has_d_cliente": {
 			      "Binding": {
 			        "ConceptualEntity": "fventas"
@@ -1928,6 +2119,138 @@ cultureInfo es-ES
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "d_clientes_have_fventas"
+			        }
+			      ]
+			    },
+			    "medidas_generale_has_comentario_MM30": {
+			      "Binding": {
+			        "ConceptualEntity": "Medidas_generales"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "medidas_generale": {
+			          "Target": {
+			            "Entity": "medidas_generale"
+			          }
+			        },
+			        "medidas_generale.comentario_MM30": {
+			          "Target": {
+			            "Entity": "medidas_generale.comentario_MM30"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "medidas_generale"
+			            },
+			            "Object": {
+			              "Role": "medidas_generale.comentario_MM30"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "medidas_generales_have_comentario_MM30"
+			        }
+			      ]
+			    },
+			    "medidas_generale_has_facturación_MM30": {
+			      "Binding": {
+			        "ConceptualEntity": "Medidas_generales"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "medidas_generale": {
+			          "Target": {
+			            "Entity": "medidas_generale"
+			          }
+			        },
+			        "medidas_generale.facturación_MM30": {
+			          "Target": {
+			            "Entity": "medidas_generale.facturación_MM30"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "medidas_generale"
+			            },
+			            "Object": {
+			              "Role": "medidas_generale.facturación_MM30"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "medidas_generales_have_facturación_MM30"
+			        }
+			      ]
+			    },
+			    "fventa_has_medidas_generale_dif_facturación_YTD": {
+			      "Binding": {
+			        "ConceptualEntity": "fventas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fventa": {
+			          "Target": {
+			            "Entity": "fventa"
+			          }
+			        },
+			        "medidas_generale.dif_facturación_YTD": {
+			          "Target": {
+			            "Entity": "medidas_generale.dif_facturación_YTD"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fventa"
+			            },
+			            "Object": {
+			              "Role": "medidas_generale.dif_facturación_YTD"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fventas_have_dif_facturación_YTD"
+			        }
+			      ]
+			    },
+			    "dproducto_has_medidas_generale_dif_facturación_YTD": {
+			      "Binding": {
+			        "ConceptualEntity": "dproducto"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dproducto": {
+			          "Target": {
+			            "Entity": "dproducto"
+			          }
+			        },
+			        "medidas_generale.dif_facturación_YTD": {
+			          "Target": {
+			            "Entity": "medidas_generale.dif_facturación_YTD"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dproducto"
+			            },
+			            "Object": {
+			              "Role": "medidas_generale.dif_facturación_YTD"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dproductos_have_dif_facturación_YTD"
 			        }
 			      ]
 			    },
@@ -3599,98 +3922,6 @@ cultureInfo es-ES
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "d_clientes_have_id_clientes"
-			        }
-			      ]
-			    },
-			    "fventa_has_d_local": {
-			      "Binding": {
-			        "ConceptualEntity": "fventas"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fventa": {
-			          "Target": {
-			            "Entity": "fventa"
-			          }
-			        },
-			        "d_local": {
-			          "Target": {
-			            "Entity": "d_local"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fventa"
-			            },
-			            "Object": {
-			              "Role": "d_local"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fventas_have_d_locals"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "d_local"
-			            },
-			            "Object": {
-			              "Role": "fventa"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "d_locals_have_fventas"
-			        }
-			      ]
-			    },
-			    "fventa_has_dproducto": {
-			      "Binding": {
-			        "ConceptualEntity": "fventas"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fventa": {
-			          "Target": {
-			            "Entity": "fventa"
-			          }
-			        },
-			        "dproducto": {
-			          "Target": {
-			            "Entity": "dproducto"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fventa"
-			            },
-			            "Object": {
-			              "Role": "dproducto"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fventas_have_dproductos"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dproducto"
-			            },
-			            "Object": {
-			              "Role": "fventa"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dproductos_have_fventas"
 			        }
 			      ]
 			    },

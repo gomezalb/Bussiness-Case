@@ -117,6 +117,19 @@ table Medidas_generales
 
 		annotation PBI_FormatHint = {"currencyCulture":"es-AR"}
 
+	measure Facturación_MM30 =
+			AVERAGEX(
+			                    DATESINPERIOD(dCalendario[Date],MAX(dCalendario[Date]),-30, DAY),
+			                    [Facturación]
+			                )
+		formatString: \$\ #,0;-\$\ #,0;\$\ #,0
+		lineageTag: bb4dda4d-e26b-4bd7-a8a2-966cb7b3810b
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-AR"}
+
+	measure Comentario_MM30 = "Media móvil 30 días"
+		lineageTag: d64ca511-d64c-4d16-bd97-5ac90c19fc8d
+
 	partition Medidas_generales = m
 		mode: import
 		source =
