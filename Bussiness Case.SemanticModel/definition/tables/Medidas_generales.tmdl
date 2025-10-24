@@ -26,7 +26,7 @@ table Medidas_generales
 			        )
 			RETURN v_costo_prod + v_impuesto
 			```
-		formatString: \$#,0.0;(\$#,0.0);\$#,0.0
+		formatString: \$#,0;(\$#,0);\$#,0
 		lineageTag: 31536000-5ab9-45f9-9071-75d5f22a3343
 
 		annotation PBI_FormatHint = {"currencyCulture":"es-US"}
@@ -34,7 +34,7 @@ table Medidas_generales
 	measure Ganancia = ```
 			[Facturación] - [Costo] 
 			```
-		formatString: \$#,0.0;(\$#,0.0);\$#,0.0
+		formatString: \$#,0;(\$#,0);\$#,0
 		lineageTag: 931d05fd-63a5-426d-be73-ecfb29d01ec8
 
 		annotation PBI_FormatHint = {"currencyCulture":"es-US"}
@@ -150,6 +150,32 @@ table Medidas_generales
 		lineageTag: fd91d1f5-81a0-4002-9f3f-30233e44a2a1
 
 		annotation PBI_FormatHint = {"currencyCulture":"es-AR"}
+
+	measure Ticket_Medio = AVERAGEX(fventas, [Facturación])
+		formatString: \$\ #,0;-\$\ #,0;\$\ #,0
+		lineageTag: 99b75392-a52b-4f4c-8b30-a802dd12c8a6
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-AR"}
+
+	measure 'Venta Max' = MAXX(VALUES(dCalendario[Date]), [Facturación])
+		formatString: \$\ #,0;-\$\ #,0;\$\ #,0
+		lineageTag: a53fa5d8-7152-4f84-8134-519153b20272
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-AR"}
+
+	measure Media_fact_día =
+			
+			--En este caso se utiliza fventas[fecha_compra] debido a que pueden haber fechas sin ventas que --modifiquen el promedio. Esta desición dependerá de las políticas del cliente.
+			AVERAGEX(VALUES(fventas[fecha_compra]), [Facturación])
+		formatString: \$\ #,0;-\$\ #,0;\$\ #,0
+		lineageTag: b74f9b5b-48cc-4620-b8ae-af6682c75d0b
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-AR"}
+
+	measure 'Texto transparente' = ```
+			"#ffffff00" 
+			```
+		lineageTag: 96afe728-e189-409d-bb5d-1c11c4cdd6f4
 
 	partition Medidas_generales = m
 		mode: import
