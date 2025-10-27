@@ -1,0 +1,21 @@
+table Medidas_vendedores
+	lineageTag: ca20429f-7ef8-4ca5-bc02-8f6a7a9b3124
+
+	measure Vendedor_media_facturacion = AVERAGEX(VALUES(dVendedor[id_vendedor]), [Facturación])
+		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
+		lineageTag: 9532fb24-aa95-409d-b08a-192f1681952e
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-AR"}
+
+	partition Medidas_vendedores = m
+		mode: import
+		source =
+				let
+				    Origen = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Columna1 = _t]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(Origen,{{"Columna1", type text}}),
+				    #"Columnas quitadas" = Table.RemoveColumns(#"Tipo cambiado",{"Columna1"})
+				in
+				    #"Columnas quitadas"
+
+	annotation PBI_ResultType = Table
+
