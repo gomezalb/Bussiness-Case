@@ -2,10 +2,53 @@ table Medidas_vendedores
 	lineageTag: ca20429f-7ef8-4ca5-bc02-8f6a7a9b3124
 
 	measure Vendedor_media_facturacion = AVERAGEX(VALUES(dVendedor[id_vendedor]), [Facturación])
-		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
+		formatString: \$\ #,0;-\$\ #,0;\$\ #,0
 		lineageTag: 9532fb24-aa95-409d-b08a-192f1681952e
 
 		annotation PBI_FormatHint = {"currencyCulture":"es-AR"}
+
+	measure Todos_Media_fact = ```
+			
+			                CALCULATE(Medidas_vendedores[Vendedor_media_facturacion], ALL(dVendedor))
+			```
+		formatString: \$\ #,0;-\$\ #,0;\$\ #,0
+		lineageTag: 3d774406-ffbd-4878-9276-944c6116ee53
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-AR"}
+
+	measure Top3_media_fact = ```
+			
+			                VAR V_top3 = TOPN(3, ALL(dVendedor), [Facturación])
+			                VAR V_Fact_medio = AVERAGEX(V_top3, [Facturación])
+			                RETURN V_Fact_medio
+			```
+		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
+		lineageTag: 18c7551b-21d0-4dc9-b0c7-02f04af7e7d0
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-AR"}
+
+	measure Todos_Media_Cantidad = ```
+			
+			               CALCULATE(Medidas_vendedores[Vendedor_media_cantidad], ALL(dVendedor))
+			```
+		lineageTag: 37c039c7-04bb-4ea1-a972-e31c3870108d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Vendedor_media_cantidad = AVERAGEX(VALUES(dVendedor[id_vendedor]), [Ctd_pedidos])
+		lineageTag: 256b2355-3481-439a-8d96-345b45834266
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Top3_media_cantidad = ```
+			
+			                VAR V_top3 = TOPN(3, ALL(dVendedor), [Ctd_pedidos])
+			                VAR V_cant_medio = AVERAGEX(V_top3, [Ctd_pedidos])
+			                RETURN V_Cant_medio
+			```
+		lineageTag: 44964b04-de6e-427f-a7b4-465393fcb90a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	partition Medidas_vendedores = m
 		mode: import

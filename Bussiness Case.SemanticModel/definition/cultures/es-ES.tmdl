@@ -2125,6 +2125,550 @@ cultureInfo es-ES
 			          }
 			        }
 			      ]
+			    },
+			    "medidas_generale.media_fact_día": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas_generales",
+			          "ConceptualProperty": "Media_fact_día"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "media fact día": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Media_fact_día": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "medidas_generale.texto_transparente": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas_generales",
+			          "ConceptualProperty": "Texto transparente"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "texto transparente": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "medidas_vendedore": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas_vendedores"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "medidas vendedore": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "medida vendedore": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.78
+			          }
+			        },
+			        {
+			          "Medidas_vendedores": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "medidas_vendedore.vendedor_media_facturacion": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas_vendedores",
+			          "ConceptualProperty": "Vendedor_media_facturacion"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "vendedor media facturacion": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Vendedor_media_facturacion": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "Vendedor": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "medidas_vendedore.todos_media_fact": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas_vendedores",
+			          "ConceptualProperty": "Todos_Media_fact"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "todos media fact": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Todos_Media_fact": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "todo media statistic": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "todo media element": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "todo media information": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "todo media statement": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "todo media detail": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "todo media circumstance": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "todo media point": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "todo media occurrence": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.482
+			          }
+			        },
+			        {
+			          "todo media happening": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.468
+			          }
+			        },
+			        {
+			          "todo media deed": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.468
+			          }
+			        },
+			        {
+			          "Todos": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "medidas_vendedore.top_3_media_fact": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas_vendedores",
+			          "ConceptualProperty": "Top3_media_fact"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "top 3 media fact": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Top3_media_fact": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "fact": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "media fact": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "3 media fact": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "best 3 media fact": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "first 3 media fact": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "leading 3 media fact": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "maximum 3 media fact": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "peak 3 media fact": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "upper 3 media fact": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "top 3 media statistic": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.514
+			          }
+			        },
+			        {
+			          "top 3 media element": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.514
+			          }
+			        },
+			        {
+			          "top 3 media information": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.514
+			          }
+			        },
+			        {
+			          "top 3 media statement": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.514
+			          }
+			        },
+			        {
+			          "Top 3": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "medidas_vendedore.todos_media_cantidad": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas_vendedores",
+			          "ConceptualProperty": "Todos_Media_Cantidad"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "todos media cantidad": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Todos_Media_Cantidad": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "Cantidad": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "medidas_vendedore.vendedor_media_cantidad": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas_vendedores",
+			          "ConceptualProperty": "Vendedor_media_cantidad"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "vendedor media cantidad": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Vendedor_media_cantidad": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "Vendedor": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "medidas_vendedore.top_3_media_cantidad": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas_vendedores",
+			          "ConceptualProperty": "Top3_media_cantidad"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "top 3 media cantidad": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Top3_media_cantidad": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "best 3 media cantidad": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "first 3 media cantidad": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "leading 3 media cantidad": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "maximum 3 media cantidad": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "peak 3 media cantidad": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "upper 3 media cantidad": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "Top 3": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
 			    }
 			  },
 			  "Relationships": {
@@ -2263,6 +2807,534 @@ cultureInfo es-ES
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "d_clientes_have_fventas"
+			        }
+			      ]
+			    },
+			    "fventa_has_medidas_vendedore_top_3_media_cantidad": {
+			      "Binding": {
+			        "ConceptualEntity": "fventas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fventa": {
+			          "Target": {
+			            "Entity": "fventa"
+			          }
+			        },
+			        "medidas_vendedore.top_3_media_cantidad": {
+			          "Target": {
+			            "Entity": "medidas_vendedore.top_3_media_cantidad"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fventa"
+			            },
+			            "Object": {
+			              "Role": "medidas_vendedore.top_3_media_cantidad"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fventas_have_top_3_media_cantidad"
+			        }
+			      ]
+			    },
+			    "fventa_has_medidas_vendedore_vendedor_media_cantidad": {
+			      "Binding": {
+			        "ConceptualEntity": "fventas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fventa": {
+			          "Target": {
+			            "Entity": "fventa"
+			          }
+			        },
+			        "medidas_vendedore.vendedor_media_cantidad": {
+			          "Target": {
+			            "Entity": "medidas_vendedore.vendedor_media_cantidad"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fventa"
+			            },
+			            "Object": {
+			              "Role": "medidas_vendedore.vendedor_media_cantidad"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fventas_have_vendedor_media_cantidad"
+			        }
+			      ]
+			    },
+			    "d_vendedor_has_medidas_vendedore_vendedor_media_cantidad": {
+			      "Binding": {
+			        "ConceptualEntity": "dVendedor"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_vendedor": {
+			          "Target": {
+			            "Entity": "d_vendedor"
+			          }
+			        },
+			        "medidas_vendedore.vendedor_media_cantidad": {
+			          "Target": {
+			            "Entity": "medidas_vendedore.vendedor_media_cantidad"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_vendedor"
+			            },
+			            "Object": {
+			              "Role": "medidas_vendedore.vendedor_media_cantidad"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_vendedors_have_vendedor_media_cantidad"
+			        }
+			      ]
+			    },
+			    "fventa_has_medidas_vendedore_todos_media_cantidad": {
+			      "Binding": {
+			        "ConceptualEntity": "fventas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fventa": {
+			          "Target": {
+			            "Entity": "fventa"
+			          }
+			        },
+			        "medidas_vendedore.todos_media_cantidad": {
+			          "Target": {
+			            "Entity": "medidas_vendedore.todos_media_cantidad"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fventa"
+			            },
+			            "Object": {
+			              "Role": "medidas_vendedore.todos_media_cantidad"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fventas_have_todos_media_cantidad"
+			        }
+			      ]
+			    },
+			    "d_vendedor_has_medidas_vendedore_todos_media_cantidad": {
+			      "Binding": {
+			        "ConceptualEntity": "dVendedor"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_vendedor": {
+			          "Target": {
+			            "Entity": "d_vendedor"
+			          }
+			        },
+			        "medidas_vendedore.todos_media_cantidad": {
+			          "Target": {
+			            "Entity": "medidas_vendedore.todos_media_cantidad"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_vendedor"
+			            },
+			            "Object": {
+			              "Role": "medidas_vendedore.todos_media_cantidad"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_vendedors_have_todos_media_cantidad"
+			        }
+			      ]
+			    },
+			    "fventa_has_medidas_vendedore_top_3_media_fact": {
+			      "Binding": {
+			        "ConceptualEntity": "fventas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fventa": {
+			          "Target": {
+			            "Entity": "fventa"
+			          }
+			        },
+			        "medidas_vendedore.top_3_media_fact": {
+			          "Target": {
+			            "Entity": "medidas_vendedore.top_3_media_fact"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fventa"
+			            },
+			            "Object": {
+			              "Role": "medidas_vendedore.top_3_media_fact"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fventas_have_top_3_media_fact"
+			        }
+			      ]
+			    },
+			    "dproducto_has_medidas_vendedore_top_3_media_fact": {
+			      "Binding": {
+			        "ConceptualEntity": "dproducto"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dproducto": {
+			          "Target": {
+			            "Entity": "dproducto"
+			          }
+			        },
+			        "medidas_vendedore.top_3_media_fact": {
+			          "Target": {
+			            "Entity": "medidas_vendedore.top_3_media_fact"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dproducto"
+			            },
+			            "Object": {
+			              "Role": "medidas_vendedore.top_3_media_fact"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dproductos_have_top_3_media_fact"
+			        }
+			      ]
+			    },
+			    "fventa_has_medidas_vendedore_todos_media_fact": {
+			      "Binding": {
+			        "ConceptualEntity": "fventas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fventa": {
+			          "Target": {
+			            "Entity": "fventa"
+			          }
+			        },
+			        "medidas_vendedore.todos_media_fact": {
+			          "Target": {
+			            "Entity": "medidas_vendedore.todos_media_fact"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fventa"
+			            },
+			            "Object": {
+			              "Role": "medidas_vendedore.todos_media_fact"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fventas_have_todos_media_fact"
+			        }
+			      ]
+			    },
+			    "dproducto_has_medidas_vendedore_todos_media_fact": {
+			      "Binding": {
+			        "ConceptualEntity": "dproducto"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dproducto": {
+			          "Target": {
+			            "Entity": "dproducto"
+			          }
+			        },
+			        "medidas_vendedore.todos_media_fact": {
+			          "Target": {
+			            "Entity": "medidas_vendedore.todos_media_fact"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dproducto"
+			            },
+			            "Object": {
+			              "Role": "medidas_vendedore.todos_media_fact"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dproductos_have_todos_media_fact"
+			        }
+			      ]
+			    },
+			    "d_vendedor_has_medidas_vendedore_todos_media_fact": {
+			      "Binding": {
+			        "ConceptualEntity": "dVendedor"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_vendedor": {
+			          "Target": {
+			            "Entity": "d_vendedor"
+			          }
+			        },
+			        "medidas_vendedore.todos_media_fact": {
+			          "Target": {
+			            "Entity": "medidas_vendedore.todos_media_fact"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_vendedor"
+			            },
+			            "Object": {
+			              "Role": "medidas_vendedore.todos_media_fact"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_vendedors_have_todos_media_fact"
+			        }
+			      ]
+			    },
+			    "fventa_has_medidas_vendedore_vendedor_media_facturacion": {
+			      "Binding": {
+			        "ConceptualEntity": "fventas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fventa": {
+			          "Target": {
+			            "Entity": "fventa"
+			          }
+			        },
+			        "medidas_vendedore.vendedor_media_facturacion": {
+			          "Target": {
+			            "Entity": "medidas_vendedore.vendedor_media_facturacion"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fventa"
+			            },
+			            "Object": {
+			              "Role": "medidas_vendedore.vendedor_media_facturacion"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fventas_have_vendedor_media_facturacion"
+			        }
+			      ]
+			    },
+			    "dproducto_has_medidas_vendedore_vendedor_media_facturacion": {
+			      "Binding": {
+			        "ConceptualEntity": "dproducto"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dproducto": {
+			          "Target": {
+			            "Entity": "dproducto"
+			          }
+			        },
+			        "medidas_vendedore.vendedor_media_facturacion": {
+			          "Target": {
+			            "Entity": "medidas_vendedore.vendedor_media_facturacion"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dproducto"
+			            },
+			            "Object": {
+			              "Role": "medidas_vendedore.vendedor_media_facturacion"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dproductos_have_vendedor_media_facturacion"
+			        }
+			      ]
+			    },
+			    "d_vendedor_has_medidas_vendedore_vendedor_media_facturacion": {
+			      "Binding": {
+			        "ConceptualEntity": "dVendedor"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_vendedor": {
+			          "Target": {
+			            "Entity": "d_vendedor"
+			          }
+			        },
+			        "medidas_vendedore.vendedor_media_facturacion": {
+			          "Target": {
+			            "Entity": "medidas_vendedore.vendedor_media_facturacion"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_vendedor"
+			            },
+			            "Object": {
+			              "Role": "medidas_vendedore.vendedor_media_facturacion"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_vendedors_have_vendedor_media_facturacion"
+			        }
+			      ]
+			    },
+			    "medidas_generale_has_texto_transparente": {
+			      "Binding": {
+			        "ConceptualEntity": "Medidas_generales"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "medidas_generale": {
+			          "Target": {
+			            "Entity": "medidas_generale"
+			          }
+			        },
+			        "medidas_generale.texto_transparente": {
+			          "Target": {
+			            "Entity": "medidas_generale.texto_transparente"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "medidas_generale"
+			            },
+			            "Object": {
+			              "Role": "medidas_generale.texto_transparente"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "medidas_generales_have_texto_transparente"
+			        }
+			      ]
+			    },
+			    "fventa_has_medidas_generale_media_fact_día": {
+			      "Binding": {
+			        "ConceptualEntity": "fventas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fventa": {
+			          "Target": {
+			            "Entity": "fventa"
+			          }
+			        },
+			        "medidas_generale.media_fact_día": {
+			          "Target": {
+			            "Entity": "medidas_generale.media_fact_día"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fventa"
+			            },
+			            "Object": {
+			              "Role": "medidas_generale.media_fact_día"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fventas_have_media_fact_día"
+			        }
+			      ]
+			    },
+			    "dproducto_has_medidas_generale_media_fact_día": {
+			      "Binding": {
+			        "ConceptualEntity": "dproducto"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dproducto": {
+			          "Target": {
+			            "Entity": "dproducto"
+			          }
+			        },
+			        "medidas_generale.media_fact_día": {
+			          "Target": {
+			            "Entity": "medidas_generale.media_fact_día"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dproducto"
+			            },
+			            "Object": {
+			              "Role": "medidas_generale.media_fact_día"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dproductos_have_media_fact_día"
 			        }
 			      ]
 			    },
