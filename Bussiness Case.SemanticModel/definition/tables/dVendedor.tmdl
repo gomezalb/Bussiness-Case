@@ -20,6 +20,7 @@ table dVendedor
 	column img_vendedor
 		dataType: string
 		lineageTag: e85f49a3-f7e6-41fd-b386-a621dbbea79c
+		dataCategory: ImageUrl
 		summarizeBy: none
 		sourceColumn: img_vendedor
 

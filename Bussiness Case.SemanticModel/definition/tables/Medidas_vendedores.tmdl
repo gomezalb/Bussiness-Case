@@ -56,6 +56,39 @@ table Medidas_vendedores
 		formatString: 0
 		lineageTag: 9383de54-67ef-493e-833b-bb830acc5e4e
 
+	measure Top_1_vendedor =
+			CALCULATE(
+			                            SELECTEDVALUE(dVendedor[img_vendedor]),
+			                            FILTER(
+			                                ALL(dVendedor),
+			                                [Ranking]=1
+			                            )
+			                        )
+		lineageTag: 3c5f44b4-ef77-452d-b399-40f5d959cccc
+		dataCategory: ImageUrl
+
+	measure Top_2_vendedor =
+			CALCULATE(
+			                            SELECTEDVALUE(dVendedor[img_vendedor]),
+			                            FILTER(
+			                                ALL(dVendedor),
+			                                [Ranking]=2
+			                            )
+			                        )
+		lineageTag: 264adef6-fa44-417e-8396-192443ea0fdf
+		dataCategory: ImageUrl
+
+	measure Top_3_vendedor =
+			CALCULATE(
+			                            SELECTEDVALUE(dVendedor[img_vendedor]),
+			                            FILTER(
+			                                ALL(dVendedor),
+			                                [Ranking]=3
+			                            )
+			                        )
+		lineageTag: 6e7c97bc-0346-4aae-95e4-b8faf9f7c557
+		dataCategory: ImageUrl
+
 	partition Medidas_vendedores = m
 		mode: import
 		source =
