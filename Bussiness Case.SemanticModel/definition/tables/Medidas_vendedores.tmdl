@@ -50,6 +50,12 @@ table Medidas_vendedores
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	measure Ranking = ```
+			RANKX(ALL(dVendedor), [Facturación],, DESC)  
+			```
+		formatString: 0
+		lineageTag: 9383de54-67ef-493e-833b-bb830acc5e4e
+
 	partition Medidas_vendedores = m
 		mode: import
 		source =
