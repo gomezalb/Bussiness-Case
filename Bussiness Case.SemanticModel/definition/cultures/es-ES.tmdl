@@ -1765,6 +1765,16 @@ cultureInfo es-ES
 			            "State": "Generated",
 			            "Weight": 0.99
 			          }
+			        },
+			        {
+			          "Cantidad Vendida": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
@@ -2357,6 +2367,16 @@ cultureInfo es-ES
 			            },
 			            "Weight": 0.9
 			          }
+			        },
+			        {
+			          "Media Facturación": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
@@ -2669,6 +2689,384 @@ cultureInfo es-ES
 			          }
 			        }
 			      ]
+			    },
+			    "medidas_vendedore.ranking": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas_vendedores",
+			          "ConceptualProperty": "Ranking"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "ranking": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "status": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "classification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "position": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "place": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "grade": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "standing": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "level": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        }
+			      ]
+			    },
+			    "medidas_vendedore.top_1_vendedor": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas_vendedores",
+			          "ConceptualProperty": "Top_1_vendedor"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "top 1 vendedor": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Top_1_vendedor": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "best 1 vendedor": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "first 1 vendedor": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "leading 1 vendedor": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "maximum 1 vendedor": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "peak 1 vendedor": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "upper 1 vendedor": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        }
+			      ]
+			    },
+			    "medidas_vendedore.top_2_vendedor": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas_vendedores",
+			          "ConceptualProperty": "Top_2_vendedor"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "top 2 vendedor": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Top_2_vendedor": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "best 2 vendedor": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "first 2 vendedor": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "leading 2 vendedor": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "maximum 2 vendedor": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "peak 2 vendedor": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "upper 2 vendedor": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        }
+			      ]
+			    },
+			    "medidas_vendedore.top_3_vendedor": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas_vendedores",
+			          "ConceptualProperty": "Top_3_vendedor"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "top 3 vendedor": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Top_3_vendedor": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "best 3 vendedor": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "first 3 vendedor": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "leading 3 vendedor": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "maximum 3 vendedor": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "peak 3 vendedor": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "upper 3 vendedor": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        }
+			      ]
+			    },
+			    "medidas_vendedore.facturación_todos_YTD": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas_vendedores",
+			          "ConceptualProperty": "Facturación_todos_YTD"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "facturación todos YTD": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Facturación_todos_YTD": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "facturación todo year to date": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.623
+			          }
+			        },
+			        {
+			          "Facturación media YTD": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
 			    }
 			  },
 			  "Relationships": {
@@ -2810,6 +3208,270 @@ cultureInfo es-ES
 			        }
 			      ]
 			    },
+			    "fventa_has_medidas_vendedore_facturación_todos_YTD": {
+			      "Binding": {
+			        "ConceptualEntity": "fventas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fventa": {
+			          "Target": {
+			            "Entity": "fventa"
+			          }
+			        },
+			        "medidas_vendedore.facturación_todos_YTD": {
+			          "Target": {
+			            "Entity": "medidas_vendedore.facturación_todos_YTD"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fventa"
+			            },
+			            "Object": {
+			              "Role": "medidas_vendedore.facturación_todos_YTD"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fventas_have_facturación_todos_YTD"
+			        }
+			      ]
+			    },
+			    "dproducto_has_medidas_vendedore_facturación_todos_YTD": {
+			      "Binding": {
+			        "ConceptualEntity": "dproducto"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dproducto": {
+			          "Target": {
+			            "Entity": "dproducto"
+			          }
+			        },
+			        "medidas_vendedore.facturación_todos_YTD": {
+			          "Target": {
+			            "Entity": "medidas_vendedore.facturación_todos_YTD"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dproducto"
+			            },
+			            "Object": {
+			              "Role": "medidas_vendedore.facturación_todos_YTD"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dproductos_have_facturación_todos_YTD"
+			        }
+			      ]
+			    },
+			    "d_vendedor_has_medidas_vendedore_facturación_todos_YTD": {
+			      "Binding": {
+			        "ConceptualEntity": "dVendedor"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_vendedor": {
+			          "Target": {
+			            "Entity": "d_vendedor"
+			          }
+			        },
+			        "medidas_vendedore.facturación_todos_YTD": {
+			          "Target": {
+			            "Entity": "medidas_vendedore.facturación_todos_YTD"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_vendedor"
+			            },
+			            "Object": {
+			              "Role": "medidas_vendedore.facturación_todos_YTD"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_vendedors_have_facturación_todos_YTD"
+			        }
+			      ]
+			    },
+			    "d_vendedor_has_medidas_vendedore_top_3_vendedor": {
+			      "Binding": {
+			        "ConceptualEntity": "dVendedor"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_vendedor": {
+			          "Target": {
+			            "Entity": "d_vendedor"
+			          }
+			        },
+			        "medidas_vendedore.top_3_vendedor": {
+			          "Target": {
+			            "Entity": "medidas_vendedore.top_3_vendedor"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_vendedor"
+			            },
+			            "Object": {
+			              "Role": "medidas_vendedore.top_3_vendedor"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_vendedors_have_top_3_vendedor"
+			        }
+			      ]
+			    },
+			    "d_vendedor_has_medidas_vendedore_top_2_vendedor": {
+			      "Binding": {
+			        "ConceptualEntity": "dVendedor"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_vendedor": {
+			          "Target": {
+			            "Entity": "d_vendedor"
+			          }
+			        },
+			        "medidas_vendedore.top_2_vendedor": {
+			          "Target": {
+			            "Entity": "medidas_vendedore.top_2_vendedor"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_vendedor"
+			            },
+			            "Object": {
+			              "Role": "medidas_vendedore.top_2_vendedor"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_vendedors_have_top_2_vendedor"
+			        }
+			      ]
+			    },
+			    "d_vendedor_has_medidas_vendedore_top_1_vendedor": {
+			      "Binding": {
+			        "ConceptualEntity": "dVendedor"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_vendedor": {
+			          "Target": {
+			            "Entity": "d_vendedor"
+			          }
+			        },
+			        "medidas_vendedore.top_1_vendedor": {
+			          "Target": {
+			            "Entity": "medidas_vendedore.top_1_vendedor"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_vendedor"
+			            },
+			            "Object": {
+			              "Role": "medidas_vendedore.top_1_vendedor"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_vendedors_have_top_1_vendedor"
+			        }
+			      ]
+			    },
+			    "fventa_has_medidas_vendedore_ranking": {
+			      "Binding": {
+			        "ConceptualEntity": "fventas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fventa": {
+			          "Target": {
+			            "Entity": "fventa"
+			          }
+			        },
+			        "medidas_vendedore.ranking": {
+			          "Target": {
+			            "Entity": "medidas_vendedore.ranking"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fventa"
+			            },
+			            "Object": {
+			              "Role": "medidas_vendedore.ranking"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fventas_have_ranking"
+			        }
+			      ]
+			    },
+			    "dproducto_has_medidas_vendedore_ranking": {
+			      "Binding": {
+			        "ConceptualEntity": "dproducto"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dproducto": {
+			          "Target": {
+			            "Entity": "dproducto"
+			          }
+			        },
+			        "medidas_vendedore.ranking": {
+			          "Target": {
+			            "Entity": "medidas_vendedore.ranking"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dproducto"
+			            },
+			            "Object": {
+			              "Role": "medidas_vendedore.ranking"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dproductos_have_ranking"
+			        }
+			      ]
+			    },
 			    "fventa_has_medidas_vendedore_top_3_media_cantidad": {
 			      "Binding": {
 			        "ConceptualEntity": "fventas"
@@ -2840,6 +3502,39 @@ cultureInfo es-ES
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "fventas_have_top_3_media_cantidad"
+			        }
+			      ]
+			    },
+			    "dproducto_has_medidas_vendedore_top_3_media_cantidad": {
+			      "Binding": {
+			        "ConceptualEntity": "dproducto"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dproducto": {
+			          "Target": {
+			            "Entity": "dproducto"
+			          }
+			        },
+			        "medidas_vendedore.top_3_media_cantidad": {
+			          "Target": {
+			            "Entity": "medidas_vendedore.top_3_media_cantidad"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dproducto"
+			            },
+			            "Object": {
+			              "Role": "medidas_vendedore.top_3_media_cantidad"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dproductos_have_top_3_media_cantidad"
 			        }
 			      ]
 			    },

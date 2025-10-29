@@ -42,7 +42,7 @@ table Medidas_vendedores
 
 	measure Top3_media_cantidad = ```
 			
-			                VAR V_top3 = TOPN(3, ALL(dVendedor), [Ctd_pedidos])
+			                VAR V_top3 = TOPN(3, ALL(dVendedor), [Facturación])
 			                VAR V_cant_medio = AVERAGEX(V_top3, [Ctd_pedidos])
 			                RETURN V_Cant_medio
 			```
@@ -88,6 +88,22 @@ table Medidas_vendedores
 			                        )
 		lineageTag: 6e7c97bc-0346-4aae-95e4-b8faf9f7c557
 		dataCategory: ImageUrl
+
+	measure Facturación_todos_YTD =
+			
+			VAR V_Max_date = MAX(dCalendario[Date])
+			VAR resultado = CALCULATE(
+			                    [Todos_Media_fact],
+			                    FILTER(
+			                        ALLSELECTED(dCalendario[Date]),
+			                        dCalendario[Date] <= V_Max_date
+			                    )
+			                )
+			RETURN resultado
+		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
+		lineageTag: a0a93e6e-b2f2-40f4-8712-96cfff574ce1
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-AR"}
 
 	partition Medidas_vendedores = m
 		mode: import
