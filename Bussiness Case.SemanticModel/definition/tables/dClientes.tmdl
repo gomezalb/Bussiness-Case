@@ -17,6 +17,46 @@ table dClientes
 
 		annotation SummarizationSetBy = Automatic
 
+	column Status = ```
+			
+			        --Fecha ültima compra cada cliente
+			        VAR ultima_compra = CALCULATE(LASTDATE(fventas[fecha_compra]))
+			        --Fecha última compra de la base de datos
+			        VAR V_data_base = MAX(fventas[fecha_compra])
+			        
+			        VAR V_dif = V_data_base - ultima_compra
+			        VAR V_clasif = SWITCH(
+			                            TRUE(), 
+			                            V_dif < 45,"Activo",
+			                            V_dif < 90, "Hacer contacto",
+			                            "Inactivo"
+			                        )
+			        RETURN V_clasif
+			```
+		lineageTag: ef3bbd66-fa7c-41c7-862d-6f9cee96d597
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Clase = ```
+			
+			    VAR V_media_renta = AVERAGEX(
+			                                RELATEDTABLE(fventas),
+			                                RELATED(dLocal[renta_anual_media])
+			                            )
+			    VAR V_clasif = SWITCH(
+			                        TRUE(),
+			                        V_media_renta < 30000, "Clase C",
+			                        V_media_renta < 60000, "Clase B",
+			                        "Clase A"
+			                    )
+			    RETURN V_clasif
+			```
+		lineageTag: 1fd53360-90c0-4e65-ad67-dd49b68e006a
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
 	partition dClientes = m
 		mode: import
 		source =
