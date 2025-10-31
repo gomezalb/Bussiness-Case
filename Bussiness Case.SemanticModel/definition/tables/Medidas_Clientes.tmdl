@@ -17,6 +17,21 @@ table Medidas_Clientes
 		formatString: 0
 		lineageTag: 85cba9f1-85bb-4afd-8fca-5ee5037cf8a0
 
+	measure Ultima_compra = LASTDATE(fventas[fecha_compra])
+		formatString: General Date
+		lineageTag: db4a4479-da26-45ab-8f8c-e6826bb21d5f
+
+	measure Nombre_cliente = SELECTEDVALUE(dClientes[nombre_cliente])
+		lineageTag: 1b114785-5a48-42b7-9ef6-916f30b25731
+
+	measure Top_productos_cliente = ```
+			
+			                    VAR V_top1 = TOPN(1, VALUES(dproducto[descripción]), [Ctd_pedidos])
+			                    VAR V_lista = CONCATENATEX(V_top1, dproducto[descripción], " , ", dproducto[descripción])
+			                    RETURN V_lista
+			```
+		lineageTag: 85701254-e974-4974-aa85-a65865dfad69
+
 	partition Medidas_Clientes = m
 		mode: import
 		source =
