@@ -8,7 +8,7 @@ model Model
 
 annotation __PBI_TimeIntelligenceEnabled = 0
 
-annotation PBI_QueryOrder = ["dClientes","dLocal","dproducto","dVendedor","fventas","Medidas_generales","Medidas_vendedores"]
+annotation PBI_QueryOrder = ["dClientes","dLocal","dproducto","dVendedor","fventas","Medidas_generales","Medidas_vendedores","Medidas_Clientes"]
 
 annotation PBI_ProTooling = ["DevMode"]
 
@@ -20,6 +20,7 @@ ref table fventas
 ref table dCalendario
 ref table Medidas_generales
 ref table Medidas_vendedores
+ref table Medidas_Clientes
 
 ref cultureInfo es-ES
 

@@ -1,0 +1,31 @@
+table Medidas_Clientes
+	lineageTag: 1b014535-03cc-4496-b577-9410cad486ba
+
+	measure Nuevos_clientes = ```
+			
+			                VAR V_year_max = MAX(dCalendario[año])
+			                VAR V_clientes = VALUES(fventas[id_cliente])
+			                VAR V_todos_clientes = 
+			                                        CALCULATETABLE(
+			                                            VALUES(fventas[id_cliente]),
+			                                            dCalendario[año] < V_year_max
+			                                        )
+			
+			                VAR V_resultado = COUNTROWS(EXCEPT(V_clientes, V_todos_clientes))
+			                RETURN V_resultado
+			```
+		formatString: 0
+		lineageTag: 85cba9f1-85bb-4afd-8fca-5ee5037cf8a0
+
+	partition Medidas_Clientes = m
+		mode: import
+		source =
+				let
+				    Origen = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Columna1 = _t]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(Origen,{{"Columna1", type text}}),
+				    #"Columnas quitadas" = Table.RemoveColumns(#"Tipo cambiado",{"Columna1"})
+				in
+				    #"Columnas quitadas"
+
+	annotation PBI_ResultType = Table
+
